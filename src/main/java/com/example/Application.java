@@ -2,7 +2,10 @@ package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
 
 @SpringBootApplication
 @RestController
@@ -16,4 +19,10 @@ public class Application {
     public String hello() {
         return "Hello from Java Microservice!";
     }
+
+    @GetMapping("/status")
+    public String getStatus() {
+        return "Service is running!";
+    }
+
 }
